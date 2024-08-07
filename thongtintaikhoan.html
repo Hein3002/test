@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class='container'>
+    <div id="overlay"></div>
+    <div class='hein_sidebar_icon'><ion-icon name="menu-outline" onclick=handleOpenSidebar()></ion-icon></div>
+    <div class='hein_sidebar'>
+      <ion-icon name="close-outline" class='hein_close_sidebar_icon' onclick=handleCloseSidebar()></ion-icon>
+      <ul class='hein_sidebar_menu'>
+        <li class="hein_menu_item">Thông tin tài khoản</li>
+        <li class="hein_menu_item">Thông tin giao dich</li>
+        <li class="hein_menu_item">Đăng xuất</li>
+        <li class="hein_menu_item">Tìm kiếm</li>
+      </ul>
+    </div>
+    <div class="lank-div">
+      <table class="lank-table">
+        <tr>
+            <th>Ngày</th>
+              <th>Nạp Tiền</th>
+              <th>Thanh Toán</th>
+              <th>Số dư</th>
+          </tr>
+          <tr>
+            <td>1/7/2024</td>
+              <td>5.000.000</td>
+              <td>20.000</td>
+              <td>5.000.000</td>
+          </tr>
+          <tr>
+            <td>1/7/2024</td>
+              <td>5.000.000</td>
+              <td>20.000</td>
+              <td>5.000.000</td>
+          </tr>
+          <tr>
+            <td>1/7/2024</td>
+              <td>5.000.000</td>
+              <td>20.000</td>
+              <td>5.000.000</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</body>
+<script>
+  function handleOpenSidebar() {
+    icon = document.querySelector('.hein_sidebar_icon').style.display = 'none'
+    document.querySelector('.hein_sidebar').style.display = 'block'
+    document.getElementById("overlay").style.display = "block"
+    document.querySelector(".hein_close_sidebar_icon").style.display = "block"
+  }
+  function handleCloseSidebar() {
+    icon = document.querySelector('.hein_sidebar_icon').style.display = 'block'
+    document.querySelector('.hein_sidebar').style.display = 'none'
+    document.getElementById("overlay").style.display = "none"
+    document.querySelector(".hein_close_sidebar_icon").style.display = "none"
+  }
+</script>
+
+</html>
