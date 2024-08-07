@@ -9,7 +9,6 @@
   box-sizing:border-box;
  }
  .root_html {
-  width: 100vw;
   height: 100vh;
   background: #D1D8C5;
   overflow: auto;
