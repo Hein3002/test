@@ -17,8 +17,8 @@
     <div class='hein_sidebar'>
       <ion-icon name="close-outline" class='hein_close_sidebar_icon' onclick=handleCloseSidebar()></ion-icon>
       <ul class='hein_sidebar_menu'>
-        <a class="hein_menu_item" href="./thongtintaikhoan.html">Thông tin tài khoản</a>
-        <a class="hein_menu_item" href="./thonngtingiaodich.html">Thông tin giao dich</a>
+        <a class="hein_menu_item" href="./thongtingiaodich.html">Thông tin tài khoản</a>
+        <a class="hein_menu_item" href="./thongtintaikhoan.html">Thông tin giao dich</a>
         <a class="hein_menu_item" href="./login.html">Đăng xuất</a>
         <a class="hein_menu_item" href="./login.html">Tìm kiếm</a>
       </ul>
@@ -52,23 +52,12 @@
           </tr>
         </table>
       </div>
-      <div>
-        <form class="lank-form">
-          <input class="hien-input" placeholder="Họ Tên" />
-          <input class="hien-input" placeholder="Số Điện Thoại" />
-          <input class="hien-input" placeholder="Tên Đăng Nhập" />
-          <button class="action">
-            <a href="">Đăng Nhập</a>
-          </button>
-        </form>
-      </div>
     </div>
 
     <!-- Lank -->
   </div>
 </body>
 <script>
-  //For moblile
   function handleOpenSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'none'
     document.querySelector('.hein_sidebar').style.display = 'block'

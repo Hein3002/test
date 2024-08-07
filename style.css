@@ -113,11 +113,6 @@ a:hover{
 
 
  /* table form */
- .lank-table {
-  padding-bottom:10px;
-  width: 100%;
-}
-
 .lank-form {
   display: flex;
   flex-direction: column;
@@ -148,6 +143,59 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #D1D8C5;
 }
+.lank-div{
+  padding-top:30px;
+}
+/* table form */
+.lank-table{
+	width:100%;
+  padding:4px;
+}
+.lank-form{
+	display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+.lank-form>input{
+	width:300px;
+    margin:4px;
+}
+.lank-form>.action{
+	margin:4px;
+    padding:4px 8px;
+}
+th,td{
+	text-align:center;
+    padding:4px;
+    cursor:pointer;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:hover{
+	background-color:#D1D8C5;
+}
+
+/* trang tim kiem */
+.content{
+	display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+}
+.input{
+	border:none;
+    margin:4px;
+    background: #EEEEEE;
+    border-radius:12px;
+    padding:8px 12px;
+}
+textarea{
+	width:99%;
+    min-height:300px;
+}
+
 
 /* reponesive */
 @media only screen and (max-width: 600px) {
