@@ -113,6 +113,16 @@ a:hover{
 
 
  /* table form */
+ .lank_content {
+  flex: 1;
+  padding-top: 30px;
+ }
+ .lank_permission {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 4px
+ }
 .lank-form {
   display: flex;
   flex-direction: column;
@@ -163,6 +173,19 @@ tr:hover {
 .lank-form>.action{
 	margin:4px;
     padding:4px 8px;
+}
+.lank_selectd_date {
+  float: left;
+}
+.lank_selectd_date input {
+  padding: 10px 25px;
+  border-radius: 5px;
+  background: #EEEEEE;
+  margin: 5px;
+}
+.search_btn {
+  padding: 8px 15px;
+  border-radius: 5px;
 }
 th,td{
 	text-align:center;
@@ -215,5 +238,6 @@ textarea{
   }
   .hein_sidebar_icon {
     display: block;
+    font-size: 14px;
   }
 }
