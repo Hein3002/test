@@ -94,9 +94,37 @@ a:hover{
 .hein_menu_item :active {
   background: #000;
 }
-
-.lank_table {
-  padding-top: 30px;
+.lank-div{
+  padding-top:30px;
+}
+/* table form */
+.lank-table{
+	width:100%;
+  padding:4px;
+}
+.lank-form{
+	display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+.lank-form>input{
+	width:300px;
+    margin:4px;
+}
+.lank-form>.action{
+	margin:4px;
+    padding:4px 8px;
+}
+th,td{
+	text-align:center;
+    padding:4px;
+    cursor:pointer;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:hover{
+	background-color:#D1D8C5;
 }
 
 /* reponesive */
