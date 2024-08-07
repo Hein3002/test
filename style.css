@@ -127,6 +127,27 @@ tr:hover{
 	background-color:#D1D8C5;
 }
 
+/* trang tim kiem */
+.content{
+	display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+}
+.input{
+	border:none;
+    margin:4px;
+    background: #EEEEEE;
+    border-radius:12px;
+    padding:8px 12px;
+}
+textarea{
+	width:99%;
+    min-height:300px;
+}
+
+
 /* reponesive */
 @media only screen and (max-width: 600px) {
   .profile {
