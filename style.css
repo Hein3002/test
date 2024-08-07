@@ -12,6 +12,17 @@
   width: 100vw;
   height: 100vh;
   background: #D1D8C5;
+  display: flex;
+  position: relative;
+}
+.container_login {
+  width: 100%;
+  height: 100%;
+  background: #D1D8C5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .profile, .action {
   display: flex;
@@ -32,6 +43,13 @@
   color: #333;
   padding: 2px;
   border-radius: 5px;
+}
+.hien-input {
+  font-size: 18px;
+  padding: 10px;
+  background: #EEEEEE;
+  border-radius: 5px;
+  color: #333;
 }
 button:hover{
   color: #EEEEEE;
@@ -61,6 +79,7 @@ a:hover{
   background: #F1E5D1;
   padding-top: 30px;
   z-index: 10;
+  margin-right: 10px;
 }
 .hein_sidebar_icon {
   padding-top: 10px;
@@ -89,14 +108,45 @@ a:hover{
   width: 90%;
   padding: 20px 20px;
   background: #EEEEEE;
+  text-decoration: none;
 }
 
-.hein_menu_item :active {
-  background: #000;
+
+ /* table form */
+ .lank-table {
+  padding-bottom:10px;
+  width: 100%;
 }
 
-.lank_table {
-  padding-top: 30px;
+.lank-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lank-form>input {
+  width: 300px;
+  margin: 4px;
+}
+
+.lank-form>.action {
+  margin: 4px;
+  padding: 4px 8px;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 4px;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:hover {
+  background-color: #D1D8C5;
 }
 
 /* reponesive */
@@ -108,8 +158,9 @@ a:hover{
   }
   .hein_sidebar {
     display: none;
-    width: 70%;
     padding: 40px 20px;
+    position: absolute;
+    width: 50%;
   }
   .hein_menu_item {
     width: 100%;
