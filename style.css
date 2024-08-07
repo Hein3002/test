@@ -128,6 +128,20 @@ a:hover{
   gap: 4px;
   overflow-x: auto;
  }
+ .lank_selectd_date {
+   float: left;
+   overflow-x: auto;
+ }
+ .lank_selectd_date input {
+   padding: 10px 25px;
+   border-radius: 5px;
+   background: #EEEEEE;
+   margin: 0 5px;
+ }
+ .search_btn {
+   padding: 10px 15px;
+   border-radius: 5px;
+ }
 .lank-form {
   display: flex;
   flex-direction: column;
@@ -177,20 +191,6 @@ tr:hover {
 .lank-form>.action{
 	margin:4px;
     padding:4px 8px;
-}
-.lank_selectd_date {
-  float: left;
-  overflow-x: auto;
-}
-.lank_selectd_date input {
-  padding: 10px 25px;
-  border-radius: 5px;
-  background: #EEEEEE;
-  margin: 5px;
-}
-.search_btn {
-  padding: 8px 15px;
-  border-radius: 5px;
 }
 th,td{
 	text-align:center;
