@@ -6,14 +6,11 @@
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
+  box-sizing:border-box;
  }
 .container {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
   background: #D1D8C5;
 }
 .profile, .action {
@@ -43,6 +40,64 @@ button:hover{
 a:hover{
   color: #7E8EF1;
 }
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+/* sidebar */
+.hein_sidebar {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background: #F1E5D1;
+  padding-top: 30px;
+  z-index: 10;
+}
+.hein_sidebar_icon {
+  padding-top: 10px;
+  display: none;
+}
+.hein_close_sidebar_icon {
+  position: absolute;
+  right: 2px;
+  top: 10px;
+  font-size: 25px;
+  display: none;
+}
+.hein_sidebar_menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  overflow-y:auto;
+  gap: 15px;
+  list-style: none;
+}
+.hein_menu_item {
+  text-align: center;
+  border-radius: 5px;
+  width: 90%;
+  padding: 20px 20px;
+  background: #EEEEEE;
+}
+
+.hein_menu_item :active {
+  background: #000;
+}
+
+.lank_table {
+  padding-top: 30px;
+}
 
 /* reponesive */
 @media only screen and (max-width: 600px) {
@@ -50,5 +105,16 @@ a:hover{
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  .hein_sidebar {
+    display: none;
+    width: 70%;
+    padding: 40px 20px;
+  }
+  .hein_menu_item {
+    width: 100%;
+  }
+  .hein_sidebar_icon {
+    display: block;
   }
 }
