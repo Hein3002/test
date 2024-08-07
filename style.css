@@ -118,17 +118,17 @@ a:hover{
   padding-top: 30px;
  }
  .lank_permission {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-self: center;
-  gap: 4px
+  justify-content: center;
+  gap: 4px;
+  overflow-x: auto;
  }
 .lank-form {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-
 .lank-form>input {
   width: 300px;
   margin: 4px;
@@ -176,6 +176,7 @@ tr:hover {
 }
 .lank_selectd_date {
   float: left;
+  overflow-x: auto;
 }
 .lank_selectd_date input {
   padding: 10px 25px;
@@ -239,5 +240,9 @@ textarea{
   .hein_sidebar_icon {
     display: block;
     font-size: 14px;
+  }
+  .lank_selectd_date {
+    display: flex;
+    overflow: auto;
   }
 }
