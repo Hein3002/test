@@ -14,6 +14,8 @@
   background: #D1D8C5;
  }
 .container {
+  width: 100%;
+  height: 100%;
   display: flex;
   position: relative;
 }
