@@ -39,13 +39,13 @@
 <script>
   function handleOpenSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'none'
-    document.querySelector('.hein_sidebar').style.display = 'block'
+    document.querySelector('.hein_sidebar').style.transform  = 'translate(1%)'
     document.getElementById("overlay").style.display = "block"
     document.querySelector(".hein_close_sidebar_icon").style.display = "block"
   }
   function handleCloseSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'block'
-    document.querySelector('.hein_sidebar').style.display = 'none'
+   document.querySelector('.hein_sidebar').style.transform  = 'translate(-100%)'
     document.getElementById("overlay").style.display = "none"
     document.querySelector(".hein_close_sidebar_icon").style.display = "none"
   }
