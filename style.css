@@ -7,7 +7,7 @@
   font-weight: 400;
   box-sizing:border-box;
  }
- .root_html {
+ .root_html {  
   height: 100vh;
   background: #D1D8C5;
   overflow: auto;
@@ -107,7 +107,7 @@
   display: none;
 }
 .hein_sidebar_icon ion-icon{
-  font-size: 20px;
+  font-size: 25px;
 }
 .hein_close_sidebar_icon {
   position: absolute;
@@ -272,6 +272,7 @@ textarea{
   .hein_sidebar_icon {
     display: block;
     font-size: 14px;
+    margin-left: 10px;
   }
   .lank_selectd_date {
     display: flex;
