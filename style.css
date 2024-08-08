@@ -241,6 +241,7 @@ tr:hover{
   justify-content:center;
   align-items:center;
   padding:24px;
+  width:100%;
 }
 .input{
 	border:none;
