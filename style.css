@@ -3,7 +3,7 @@
   padding: 0;
   border: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   box-sizing:border-box;
  }
@@ -78,14 +78,12 @@
   margin-bottom: 20px;
 }
 .profile input {
-  font-size: 18px;
   padding: 10px;
   background: #EEEEEE;
   border-radius: 5px;
   color: #333;
 }
 .action  a{
-  font-size: 18px;
   padding: 2px;
   border-radius: 5px;
 }
@@ -259,9 +257,6 @@ textarea{
 
 /* reponesive */
 @media only screen and (max-width: 600px) {
-  * {
-    font-size: 18px;
-  }
   .profile {
     display: flex;
     align-items: center;
