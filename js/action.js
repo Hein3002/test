@@ -1,9 +1,6 @@
-function tracuu() {
-
-}
 function getFetch(url, jsonCondition) {
     urlOpen=''
-    if(jsonCondition!=undefined){
+    if(jsonCondition!==undefined){
         urlOpen='?'+Object.entries(jsonCondition).map(([key,value])=>key+'='+value).join('&')
     }
     fetch(url)
