@@ -61,6 +61,9 @@
   align-items: center;
   flex-direction: column;
 }
+.container_login .title{
+  color: #FF4E88;
+}
 .container_login .search_profile {
   margin-bottom: 60px;
   font-weight: 600;

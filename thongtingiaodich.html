@@ -21,7 +21,7 @@
           <a class="hein_menu_item" href="./thongtintaikhoan.html">Thông tin tài khoản</a>
           <a class="hein_menu_item" href="./thongtingiaodich.html">Thông tin giao dich</a>
           <a class="hein_menu_item" href="./timkiem.html">Tra cứu</a>
-          <a class="hein_menu_item" href="./doimatkhau.html">Đổi Mật Khẩu</a>
+          <a class="hein_menu_item" href="./doimatkhau.html">Đổi mật khẩu</a>
           <a class="hein_menu_item" href="./login.html">Đăng xuất</a>
         </ul>
       </div>
@@ -75,13 +75,13 @@
 <script>
   function handleOpenSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'none'
-    document.querySelector('.hein_sidebar').style.display = 'block'
+    document.querySelector('.hein_sidebar').style.transform  = 'translate(1%)'
     document.getElementById("overlay").style.display = "block"
     document.querySelector(".hein_close_sidebar_icon").style.display = "block"
   }
   function handleCloseSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'block'
-    document.querySelector('.hein_sidebar').style.display = 'none'
+   document.querySelector('.hein_sidebar').style.transform  = 'translate(-100%)'
     document.getElementById("overlay").style.display = "none"
     document.querySelector(".hein_close_sidebar_icon").style.display = "none"
   }
