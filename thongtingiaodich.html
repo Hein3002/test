@@ -22,14 +22,15 @@
           <a class="hein_menu_item" href="./thongtingiaodich.html">Thông tin giao dich</a>
           <a class="hein_menu_item" href="./index.html">Tra cứu</a>
           <a class="hein_menu_item" href="./doimatkhau.html">Đổi mật khẩu</a>
-          <a class="hein_menu_item" href="./in.html">Đăng xuất</a>
+          <a class="hein_menu_item" href="#" id='dang_xuat'>Đăng xuất</a>
         </ul>
       </div>
       <div class='lank_content'>
         <div>
-          <table class="lank-table">
+          <table class="lank-table" id="lank-table">
             <tr>
               <th>Ngày</th>
+              <th>Diễn giải</th>
               <th>Nạp Tiền</th>
               <th>Thanh Toán</th>
               <th>Số dư</th>
@@ -42,27 +43,10 @@
                 <input type="date" name="den_ngay" id="date_next">
               </div>
               <div>
-                <button class='search_btn'>Tìm kiếm</button>
+                <button class='search_btn' id="lank-search">Tìm kiếm</button>
               </div>
             </div>
-            <tr>
-              <td>1/7/2024</td>
-              <td>5.000.000</td>
-              <td>20.000</td>
-              <td>5.000.000</td>
-            </tr>
-            <tr>
-              <td>1/7/2024</td>
-              <td>5.000.000</td>
-              <td>20.000</td>
-              <td>5.000.000</td>
-            </tr>
-            <tr>
-              <td>1/7/2024</td>
-              <td>5.000.000</td>
-              <td>20.000</td>
-              <td>5.000.000</td>
-            </tr>
+
           </table>
         </div>
       </div>
@@ -75,16 +59,19 @@
 <script>
   function handleOpenSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'none'
-    document.querySelector('.hein_sidebar').style.transform  = 'translate(1%)'
+    document.querySelector('.hein_sidebar').style.transform = 'translate(1%)'
     document.getElementById("overlay").style.display = "block"
     document.querySelector(".hein_close_sidebar_icon").style.display = "block"
   }
   function handleCloseSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'block'
-   document.querySelector('.hein_sidebar').style.transform  = 'translate(-100%)'
+    document.querySelector('.hein_sidebar').style.transform = 'translate(-100%)'
     document.getElementById("overlay").style.display = "none"
     document.querySelector(".hein_close_sidebar_icon").style.display = "none"
   }
 </script>
+<script src="./js/main.js"></script>
+<script src="./js/action.js"></script>
+<script src="./js/thongtingiaodich.js"></script>
 
 </html>

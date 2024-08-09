@@ -1,34 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class='root_html'>
-  <div class='container'>
-    <div class='container_login'>
-      <div class="lank-div">
-        <form class="lank-form">
-            <input  class="hien-input" placeholder="Email"/>
-            <input  class="hien-input" placeholder="Mật khẩu"/>
-            <div style='text-align: center; margin-top: 20px;'>                         
-              <a style='margin-right: 10px; ' href="./thongtintaikhoan.html">Đăng nhập</a>
-              <a href="./dangky.html">Đăng ký</a>
-            </div>
 
-        </form>
+<body>
+    <div class="root_html">
+        <div class="container">
+            <div class="container_login">
+                <div class="lank-div">
+                    <form class="lank-form">
+                        <input class="hien-input" placeholder="Email" id="email" />
+                        <input type="password" class="hien-input" placeholder="Mật khẩu" id="mat_khau" />
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a style="margin-right: 10px;" href="#" id="dang_nhap">Đăng nhập</a>
+                            <a href="./index.html">Trang chủ</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-  </div>
- </div>
- <script src="./js/action.js"></script>
- <script src="./js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const dang_nhap_btn = document.getElementById("dang_nhap");
+        if (checkLogin()) {
+            window.location = "https://searchgpt247.info/";
+        } else {
+            function login(url) {
+                return fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then((content) => {
+                        return content;
+                    })
+                    .catch((error) => {
+                        console.error("Error posting content:", error);
+                        throw error;
+                    });
+            }
+            dang_nhap_btn?.addEventListener("click", async function eventLogin() {
+                const email = document.getElementById("email").value;
+                const matKhau = document.getElementById("mat_khau").value;
+                try {
+                    let response = await login(`https://searchgpt247.info/api/auth?username=${encodeURIComponent(email)}&password=${encodeURIComponent(matKhau)}`);
+                    if (response.code == 200) {
+                        setCookie(COOKIE_NAME, response.token, TIMEOUT_DURATION);
+                        window.location.replace("https://searchgpt247.info/");
+                    } else {
+                        throw response.message;
+                    }
+                } catch (error) {
+                    alert(error);
+                }
+            });
+            document?.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    dang_nhap_btn.click();
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>

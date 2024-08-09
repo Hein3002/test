@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</head>
-
-<body>
-  <div class='root_html'>
-  <div class="container">
-    <div class='container_search'>
-      <div class="content">
-        <div style="width:60%">
-          <div class="profile" style="width:100%">
-            <input type="text" class="input" style="width:100%" placeholder="Số điện thoại\CCCD">
-          </div>
-          <textarea class="input" placeholder="Kết quả"></textarea>
+    <head>        
+        <meta charset="UTF-8" />
+        <title>Page Title</title>
+        <base href="https://searchgpt247.info/">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="root_html">
+            <div class="container">
+                <div class="container_search">
+                    <div class="content">
+                        <div style="width: 60%;">
+                            <div class="profile" style="width: 100%;">
+                                <input type="text" class="input" style="width: 100%;" placeholder="Số điện thoại/CCCD" id='sdt_cccd'/>
+                            </div>
+                            <textarea readonly class="input" style="font-size: 18px;" placeholder="Kết quả tra cứu" id="ket_qua_tra_cuu"></textarea>
+                        </div>
+                        <div class="action">
+                            <a href="#" id="user_action"></a>
+                            <a href="#" id="user_status"></a>
+                            <a href="huongdan.html">Hướng dẫn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class='action'>
-          <a href="./dangnhap.html">Đăng xuất</a>
-          <a href="./thongtintaikhoan.html">Tài khoản</a>
-          <a href="./huongdan.html">Hướng dẫn</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-
+    </body>
+    <script src="js/main.js"></script>
+    <script src="js/action.js"></script>
+    <script src="js/tracuuthongtintaikhoan.js"></script>
+    <script>
+        addEventListener("load", (event) => {
+          if(checkLogin()) {
+            document.getElementById('user_action').innerText = "Tài khoản";
+            document.getElementById('user_status').innerText = "Đăng xuất";
+            document.getElementById('user_action').setAttribute("href", "thongtintaikhoan.html");
+            document.getElementById('user_status').setAttribute("href", "dangxuat.html");
+          }else {
+            document.getElementById('user_action').innerText = "Đăng ký";
+            document.getElementById('user_status').innerText = "Đăng nhập";
+            document.getElementById('user_action').setAttribute("href", "dangky.html");
+            document.getElementById('user_status').setAttribute("href", "dangnhap.html");
+          }
+        });
+      </script>
 </html>
