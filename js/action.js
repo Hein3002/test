@@ -1,79 +1,95 @@
-function getFetch(url, jsonCondition) {
-    urlOpen=''
-    if(jsonCondition!==undefined){
-        urlOpen='?'+Object.entries(jsonCondition).map(([key,value])=>key+'='+value).join('&')
+function getFetch(url, jsonCondition, token) {
+    let urlOpen = url;
+    if (jsonCondition !== undefined) {
+        urlOpen += '?' + Object.entries(jsonCondition).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
     }
-    fetch(url)
+
+    return fetch(urlOpen, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Token': token
+        },
+    })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json();
         })
+        .catch(error => {
+            console.error('Error fetching content:', error);
+            throw error; // Ném lại lỗi để có thể được xử lý bởi hàm gọi
+        });
+}
+function addFetch(url, jsonValue, token) {
+    fetch(url, {
+        method: 'POST', // Phương thức POST
+        headers: {
+            'Content-Type': 'application/json',
+            'Token': token
+        },
+        body: jsonValue // Chuyển đổi đối tượng JSON thành chuỗi JSON
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Giả sử phản hồi là JSON
+        })
         .then(content => {
             return content;
         })
         .catch(error => {
-            console.error('Error fetching content:', error);
+            console.error('Error posting content:', error);
+            throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
         });
 }
-function addFetch(url,jsonValue){
-    fetch(url,{
-        method: 'POST', // Phương thức POST
-        headers: {
-            'Content-Type': 'application/json' // Đặt Content-Type là application/json
-        },
-        body: jsonValue // Chuyển đổi đối tượng JSON thành chuỗi JSON
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json(); // Giả sử phản hồi là JSON
-    })
-    .then(content => {
-        return content;
-    })
-    .catch(error => {
-        console.error('Error posting content:', error);
-        throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
-    });
-}
-function updateFetch(url,jsonValue,id){
-    fetch(url+'/'+id,{
+function updateFetch(url, jsonValue, id, token) {
+    fetch(url + '/' + id, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json' 
+            'Content-Type': 'application/json',
+            'Token': token
         },
-        body: jsonValue 
+        body: jsonValue
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json(); // Giả sử phản hồi là JSON
-    })
-    .then(content => {
-        return content;
-    })
-    .catch(error => {
-        console.error('Error posting content:', error);
-        throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Giả sử phản hồi là JSON
+        })
+        .then(content => {
+            return content;
+        })
+        .catch(error => {
+            console.error('Error posting content:', error);
+            throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
+        });
 }
-function deleteFetch(url,id){
-    fetch(url+'/'+id)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json(); // Giả sử phản hồi là JSON
+function deleteFetch(url, id, token) {
+    fetch(url + '/' + id, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Token': token
+        },
     })
-    .then(content => {
-        return content;
-    })
-    .catch(error => {
-        console.error('Error posting content:', error);
-        throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Giả sử phản hồi là JSON
+        })
+        .then(content => {
+            return content;
+        })
+        .catch(error => {
+            console.error('Error posting content:', error);
+            throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
+        });
 }
+
+//---------------
+
+
+
