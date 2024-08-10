@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>        
+    <head>
         <meta charset="UTF-8" />
         <title>Page Title</title>
-        <base href="https://searchgpt247.info/">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -14,13 +13,13 @@
                     <div class="content">
                         <div style="width: 60%;">
                             <div class="profile" style="width: 100%;">
-                                <input type="text" class="input" style="width: 100%;" placeholder="Số điện thoại/CCCD" id='sdt_cccd'/>
+                                <input type="text" class="input" style="width: 100%;" placeholder="Số điện thoại/CCCD" />
                             </div>
-                            <textarea readonly class="input" style="font-size: 18px;" placeholder="Kết quả tra cứu" id="ket_qua_tra_cuu"></textarea>
+                            <textarea class="input" style="font-size: 18px;" placeholder="Kết quả tra cứu"></textarea>
                         </div>
                         <div class="action">
-                            <a href="#" id="user_action"></a>
-                            <a href="#" id="user_status"></a>
+                            <a href="dangky.html">Đăng ký</a>
+                            <a href="dangnhap.html" id="user_status">Đăng nhập</a>
                             <a href="huongdan.html">Hướng dẫn</a>
                         </div>
                     </div>
@@ -28,22 +27,5 @@
             </div>
         </div>
     </body>
-    <script src="js/main.js"></script>
-    <script src="js/action.js"></script>
-    <script src="js/tracuuthongtintaikhoan.js"></script>
-    <script>
-        addEventListener("load", (event) => {
-          if(checkLogin()) {
-            document.getElementById('user_action').innerText = "Tài khoản";
-            document.getElementById('user_status').innerText = "Đăng xuất";
-            document.getElementById('user_action').setAttribute("href", "thongtintaikhoan.html");
-            document.getElementById('user_status').setAttribute("href", "dangxuat.html");
-          }else {
-            document.getElementById('user_action').innerText = "Đăng ký";
-            document.getElementById('user_status').innerText = "Đăng nhập";
-            document.getElementById('user_action').setAttribute("href", "dangky.html");
-            document.getElementById('user_status').setAttribute("href", "dangnhap.html");
-          }
-        });
-      </script>
+    <script src="./js/login.js"></script>
 </html>

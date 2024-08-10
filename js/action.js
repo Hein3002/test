@@ -1,30 +1,3 @@
-
-function getReponse(url, jsonCondition,jsonValue, token) {
-    let urlOpen = url;
-    if (jsonCondition !== undefined) {
-        urlOpen += '?' + Object.entries(jsonCondition).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
-    }
-
-    return fetch(urlOpen, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json',
-            'Token': token
-        },
-        body: jsonValue 
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .catch(error => {
-            console.error('Error fetching content:', error);
-            throw error; // Ném lại lỗi để có thể được xử lý bởi hàm gọi
-        });
-}
-
 function getFetch(url, jsonCondition, token) {
     let urlOpen = url;
     if (jsonCondition !== undefined) {
@@ -71,8 +44,8 @@ function addFetch(url, jsonValue, token) {
             throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
         });
 }
-function updateFetch(url, jsonValue, token) {
-    fetch(url, {
+function updateFetch(url, jsonValue, id, token) {
+    fetch(url + '/' + id, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

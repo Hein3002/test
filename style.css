@@ -7,21 +7,6 @@
   font-weight: 400;
   box-sizing:border-box;
  }
- ::-webkit-scrollbar {
-  width: 20px;
-}
-*::-webkit-scrollbar {
-  width: 8px;
-  height: 8px
-}
-*::-webkit-scrollbar-thumb {
-  background: '#dcdde1';
-  border-radius: 8px
-}
-*::-webkit-scrollbar-thumb:hover {
-  background: white;
-  border-radius: '8px'
-}
  .root_html {  
   height: 100vh;
   background: #D1D8C5;
@@ -267,18 +252,6 @@ tr:hover{
 textarea{
 	width:99%;
   min-height:300px;
-  outline: none;
-}
-#huong_dan {
-  overflow-x: auto;
-  width: 700px; 
-  height: 600px;
-  gap:4px;
-  background-color:aliceblue;
-  display:flex;
-  flex-direction: column;
-  border-radius:12px; 
-  padding: 20px 50px;
 }
 
 
@@ -307,11 +280,6 @@ textarea{
   .lank_selectd_date {
     display: flex;
     overflow: auto;
-  }
-  #huong_dan {
-    width: 90%;
-    text-align: left;
-    overflow-y: auto;
   }
 }
 
