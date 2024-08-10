@@ -1,3 +1,4 @@
+
 window.addEventListener('load', function() {
     if(!checkLogin()){
         window.location.href="./index.html"
@@ -34,5 +35,4 @@ async function getData(){
                     </tr>`).join('')
     console.log(data)
 }
-
 getData()

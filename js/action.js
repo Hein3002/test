@@ -1,3 +1,4 @@
+
 function getReponse(url, jsonCondition,jsonValue, token) {
     let urlOpen = url;
     if (jsonCondition !== undefined) {
