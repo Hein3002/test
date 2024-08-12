@@ -1,7 +1,7 @@
 
 window.addEventListener('load', function() {
     if(!checkLogin()){
-        window.location.href="./index.html"
+        window.location="https://searchgpt247.info/"
     }
 });
 searchBtn=document.getElementById('lank-search');
@@ -14,7 +14,7 @@ searchBtn.addEventListener('click',async ()=>{
     data=data.data;
     tong=0;
     table.innerHTML+=data.map(item=>`<tr idrow="${item.id}">
-        <td>${item.ngay_gio}</td>
+        <td>${new Date(item.ngay_gio.replace(" ", "T")).toLocaleDateString("vi-VN",{ year: 'numeric', month: '2-digit', day: '2-digit' })}</td>
         <td class="text-left">${item.dien_giai}</td>
         <td class="text-right">${item.loai=="1"?'':parseInt(item.so_tien).toLocaleString('vi-VN')}</td>
         <td class="text-right">${item.loai=="1"?parseInt(item.so_tien).toLocaleString('vi-VN'):''}</td>
@@ -27,7 +27,7 @@ async function getData(){
     data=data.data
     tong=0;
     table.innerHTML+=data.map(item=>`<tr idrow="${item.id}">
-                        <td>${item.ngay_gio}</td>
+                        <td>${new Date(item.ngay_gio.replace(" ", "T")).toLocaleDateString("vi-VN",{ year: 'numeric', month: '2-digit', day: '2-digit' })}</td>
                         <td class="text-left">${item.dien_giai}</td>
                         <td class="text-right">${item.loai=="1"?'':parseInt(item.so_tien).toLocaleString('vi-VN')}</td>
                         <td class="text-right">${item.loai=="1"?parseInt(item.so_tien).toLocaleString('vi-VN'):''}</td>

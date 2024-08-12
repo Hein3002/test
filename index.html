@@ -13,8 +13,9 @@
                 <div class="container_search">
                     <div class="content">
                         <div style="width: 60%;">
-                            <div class="profile" style="width: 100%;">
-                                <input type="text" class="input" style="width: 100%;" placeholder="Số điện thoại/CCCD" id='sdt_cccd'/>
+                            <div class="profile" style="width: 100%; position: relative;">
+                                <input type="text" class="input" style="width: 100%" placeholder="Số điện thoại/CCCD" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id='sdt_cccd'/>
+                                <p id="canh_bao">Bạn cần đăng nhập để tra cứu thông tin. Nếu bạn chưa có tài khoản, hãy nhấn đăng ký</p>
                             </div>
                             <textarea readonly class="input" style="font-size: 18px;" placeholder="Kết quả tra cứu" id="ket_qua_tra_cuu"></textarea>
                         </div>

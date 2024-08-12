@@ -12,14 +12,19 @@ async function updateData() {
     const ten = document.getElementById('lank-name').value
     const sdt = document.getElementById('lank-sdt').value
     const email = document.getElementById('lank-email').value
-    data = {
-        ho_ten : ten,
-        so_dien_thoai : sdt,
-        email: email
+    if (ten == "" || sdt == "" || email == "") {
+        alert("Nhập đầy đủ thông tin trước khi cập nhật")
+    }else {
+        data = {
+            ho_ten: ten,
+            so_dien_thoai: sdt,
+            email: email
+        }
+        let response = await updateFetch('https://searchgpt247.info/api/info/update', JSON.stringify(data), getCookie("token"))
+        alert(response.message)
     }
-    let response = await updateFetch('https://searchgpt247.info/api/info/update',JSON.stringify(data),getCookie("token"))   
- return response
 }
+
 capNhatBtn?.addEventListener('click', async (e) => {
     e.preventDefault()
     updateData()

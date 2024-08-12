@@ -1,5 +1,5 @@
 
-function getReponse(url, jsonCondition,jsonValue, token) {
+ function getReponse(url, jsonCondition,jsonValue, token) {
     let urlOpen = url;
     if (jsonCondition !== undefined) {
         urlOpen += '?' + Object.entries(jsonCondition).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
@@ -15,12 +15,14 @@ function getReponse(url, jsonCondition,jsonValue, token) {
     })
         .then(response => {
             if (!response.ok) {
+                deleteCookie(COOKIE_NAME)
+                window.location = "https://searchgpt247.info/";
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json();
         })
         .catch(error => {
-            console.error('Error fetching content:', error);
+            console.error('Error fetching content:', error);   
             throw error; // Ném lại lỗi để có thể được xử lý bởi hàm gọi
         });
 }
@@ -39,6 +41,8 @@ function getFetch(url, jsonCondition, token) {
     })
         .then(response => {
             if (!response.ok) {
+                deleteCookie(COOKIE_NAME)
+                window.location = "https://searchgpt247.info/";
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json();
@@ -49,7 +53,7 @@ function getFetch(url, jsonCondition, token) {
         });
 }
 function addFetch(url, jsonValue, token) {
-    fetch(url, {
+   return fetch(url, {
         method: 'POST', // Phương thức POST
         headers: {
             'Content-Type': 'application/json',
@@ -59,6 +63,8 @@ function addFetch(url, jsonValue, token) {
     })
         .then(response => {
             if (!response.ok) {
+                deleteCookie(COOKIE_NAME)
+                window.location = "https://searchgpt247.info/";
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json(); // Giả sử phản hồi là JSON
@@ -67,12 +73,12 @@ function addFetch(url, jsonValue, token) {
             return content;
         })
         .catch(error => {
-            console.error('Error posting content:', error);
-            throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
+            console.error('Error fetching content:', error);
+            throw error; // Ném lại lỗi để có thể được xử lý bởi hàm gọi
         });
 }
 function updateFetch(url, jsonValue, token) {
-    fetch(url, {
+   return fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -81,7 +87,9 @@ function updateFetch(url, jsonValue, token) {
         body: jsonValue
     })
         .then(response => {
-            if (!response.ok) {
+            if (!response.ok) { 
+                deleteCookie(COOKIE_NAME)
+                window.location = "https://searchgpt247.info/";
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json(); // Giả sử phản hồi là JSON
@@ -90,8 +98,8 @@ function updateFetch(url, jsonValue, token) {
             return content;
         })
         .catch(error => {
-            console.error('Error posting content:', error);
-            throw error; // Ném lại lỗi để có thể xử lý bởi người gọi hàm
+            console.error('Error fetching content:', error);
+            throw error; // Ném lại lỗi để có thể được xử lý bởi hàm gọi
         });
 }
 function deleteFetch(url, id, token) {
@@ -103,6 +111,8 @@ function deleteFetch(url, id, token) {
     })
         .then(response => {
             if (!response.ok) {
+                deleteCookie(COOKIE_NAME)
+                window.location = "https://searchgpt247.info/";
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             return response.json(); // Giả sử phản hồi là JSON

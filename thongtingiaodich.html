@@ -20,7 +20,7 @@
         <ul class='hein_sidebar_menu'>
           <a class="hein_menu_item" href="./thongtintaikhoan.html">Thông tin tài khoản</a>
           <a class="hein_menu_item" href="./thongtingiaodich.html">Thông tin giao dich</a>
-          <a class="hein_menu_item" href="./index.html">Tra cứu</a>
+          <a class="hein_menu_item" href="/">Tra cứu</a>
           <a class="hein_menu_item" href="./doimatkhau.html">Đổi mật khẩu</a>
           <a class="hein_menu_item" href="#" id='dang_xuat'>Đăng xuất</a>
         </ul>
@@ -42,8 +42,11 @@
                 <label for="date_next">Đến ngày:</label>
                 <input type="date" name="den_ngay" id="date_next">
               </div>
-              <div>
-                <button class='search_btn' id="lank-search">Tìm kiếm</button>
+              <div class='action lank_action'>
+                <button class='btn search_btn' id="lank-search">Tìm kiếm</button>
+                <button class='btn payment_btn' id="lank-payment">
+                  <a style='text-decoration: none; color: inherit;' href="huongdan.html">Nạp tiền</a>
+                </button>
               </div>
             </div>
 
@@ -70,7 +73,7 @@
     document.querySelector(".hein_close_sidebar_icon").style.display = "none"
   }
 </script>
-<script src="./js/main.js"></script>
 <script src="./js/action.js"></script>
+<script src="./js/main.js"></script>
 <script src="./js/thongtingiaodich.js"></script>
 </html>

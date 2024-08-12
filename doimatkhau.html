@@ -20,22 +20,32 @@
       <ul class='hein_sidebar_menu'>
         <a class="hein_menu_item" href="./thongtintaikhoan.html">Thông tin tài khoản</a>
         <a class="hein_menu_item" href="./thongtingiaodich.html">Thông tin giao dich</a>
-        <a class="hein_menu_item" href="./index.html">Tra cứu</a>
+        <a class="hein_menu_item" href="/">Tra cứu</a>
         <a class="hein_menu_item" href="./doimatkhau.html">Đổi mật khẩu</a>
         <a class="hein_menu_item" href="#" id='dang_xuat'>Đăng xuất</a>
       </ul>
     </div>
     <div class="lank-div">
         <form class="lank-form">
-            <input class="hien-input" placeholder="Mật khẩu cũ"/>
-            <input class="hien-input" placeholder="Mật khẩu mới"/>
-            <input  class="hien-input" placeholder="Xác nhận mật khẩu mới"/>
-            <button class="submit"> Cập nhật </button>
+            <input class="hien-input" id='mk_cu' placeholder="Mật khẩu cũ"/>
+            <input class="hien-input" id='mk_moi' placeholder="Mật khẩu mới"/>
+            <input  class="hien-input" id='xac_nhan_mk_moi' placeholder="Xác nhận mật khẩu mới"/>
+            <button class="btn submit" id='btn_cap_nhat_mk'> Cập nhật </button>
         </form>
     </div>
   </div>
  </div>
 </body>
+<script src="./js/main.js"></script>
+<script src="js/action.js"></script>
+<script src="js/doimatkhau.js"></script>
+<script>
+  addEventListener("load", (event) => {    
+    if(!checkLogin()) {
+        window.location = "https://searchgpt247.info/";
+    }
+  });
+</script>
 <script>
   function handleOpenSidebar() {
     icon = document.querySelector('.hein_sidebar_icon').style.display = 'none'
@@ -50,5 +60,4 @@
     document.querySelector(".hein_close_sidebar_icon").style.display = "none"
   }
 </script>
-<script src="./js/main.js"></script>
 
