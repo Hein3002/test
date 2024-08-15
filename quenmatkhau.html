@@ -6,18 +6,15 @@
         <title>Document</title>
         <link rel="stylesheet" href="style.css" />
     </head>
-
     <body>
         <div class="root_html">
             <div class="container">
                 <div class="container_login">
                     <div class="lank-div">
                         <form class="lank-form">
-                            <input id='dk_ho_ten' class="hien-input" placeholder="Họ tên" required/>
-                            <input type="text" id='dk_sdt' class="hien-input" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Số điện thoại" required>
                             <input id='dk_email' type='email' class="hien-input" placeholder="Email" required/>
                             <div style="text-align: center; margin-top: 20px;">
-                                <a id='dang_ky' href="#">Đăng ký </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a id='dang_ky' href="#">Tìm kiếm</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="/"> Trang chủ</a>
                             </div>
                         </form>
@@ -27,8 +24,6 @@
         </div>
     </body>
     <script src='js/main.js'> </script>
-    <script src="js/action.js"></script>
-    <script src="js/dangky.js"></script>
     <script>
       addEventListener("load", (event) => {
         if(checkLogin()) {

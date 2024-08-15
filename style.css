@@ -7,6 +7,18 @@
   font-weight: 400;
   box-sizing:border-box;
  }
+ ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px
+}
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 8px
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: aliceblue;
+  border-radius: '8px'
+}
  .root_html {  
   height: 100vh;
   background: #D1D8C5;
@@ -40,6 +52,7 @@
   height: 100%;
   display: flex;
   position: relative;
+  overflow: hidden;
 }.container_search {
   width: 100%;
   height: 100%;
@@ -86,6 +99,18 @@
 .action  a{
   padding: 2px;
   border-radius: 5px;
+}
+#canh_bao {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 1%;
+  font-size: 14px; 
+  color: #FF4E88;
+  visibility: hidden;
+  /* overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis; */
 }
 .hien-input {
   padding: 10px;
@@ -148,6 +173,8 @@
  .lank_content {
   flex: 1;
   padding-top: 30px;
+  width: 100%; 
+  overflow: auto;
  }
  .lank_permission {
   display: inline-flex;
@@ -155,10 +182,22 @@
   justify-content: center;
   gap: 4px;
   overflow-x: auto;
+  width: 100%;
+ }
+ .lank_action {
+  display: inline-flex;
  }
  .lank_selectd_date {
-   float: left;
-   overflow-x: auto;
+  overflow-x: auto;
+  margin-right: 10px;
+  width: 100%;
+  position: absolute;
+  height: 75px;
+  margin-left: 22%;
+  top: 0;
+  background: #d1d8c5;
+  display: flex;
+  align-items: center;
  }
  .lank_selectd_date input {
    padding: 10px 25px;
@@ -166,7 +205,7 @@
    background: #EEEEEE;
    margin: 0 5px;
  }
- .search_btn {
+ .btn {
    padding: 10px 15px;
    border-radius: 5px;
  }
@@ -184,7 +223,12 @@
   margin: 4px;
   padding: 4px 8px;
 }
-
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 th,
 td {
   text-align: center;
@@ -204,8 +248,9 @@ tr:hover {
 }
 /* table form */
 .lank-table{
-	width:100%;
-  padding:4px;
+  margin-top: 20px;
+  width: 100%;
+  padding: 4px;
 }
 .lank-form{
 	display:flex;
@@ -252,11 +297,36 @@ tr:hover{
 textarea{
 	width:99%;
   min-height:300px;
+  outline: none;
+}
+.content_overlay {
+  width:fit-content;
+  background-color:aliceblue;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow-x: hidden;
+}
+.content_home {
+  width: 60%;
+}
+#huong_dan {
+  width: 800px; 
+  height: 500px;
+  gap:4px;
+  display:flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  border-radius:12px; 
+  overflow: auto;
 }
 
 
 /* reponesive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
   .profile {
     display: flex;
     align-items: center;
@@ -280,6 +350,39 @@ textarea{
   .lank_selectd_date {
     display: flex;
     overflow: auto;
+    padding: 0 20px;
+    margin-left: 10%;
+    width: 100%;
+  }
+  .payment_btn, .search_btn {
+    padding: 0 20px;
+  }
+  .search_btn {
+    margin-left: 20px;
+  }
+  .content_home {
+    width: 90%;
+  }
+  .content_overlay {
+    width: 100%;
+    height: 90%;
+  }
+  #huong_dan {        
+    width: 100%;
+    text-align: left;
+    padding: 5px 30px;
+  }
+  #canh_bao {
+    top: -100%;
+  }
+
+}
+@media only screen and (max-width: 320px) {
+  .content_home {
+    width: 90%;
+  }
+  #canh_bao {
+    top: -130%;
   }
 }
 
